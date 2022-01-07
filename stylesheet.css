@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/*--装飾--*/
+
+.container{
+    width:100%;
+    height:100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.Watch{
+    font-family: "Gill Sans", sans-serif;
+    color: greenyellow;
+    text-align: center;
+    text-shadow: 0 0 3px greenyellow;
+}
+.WatchCalendar{
+    font-size: 35px;
+    margin: 0px;
+}
+.WatchTimer{
+    font-size: 120px;
+    margin: 0px;
+}

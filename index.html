@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>デジタル時計-課題</title>
+</head>
+<body>
+    <div id="container">
+        <div id='Watch'>
+            <p id='WatchCalendar'>0000.00.00.（）</p>
+            <p id='WatchTimer'>00:00:00</p>
+        </div>
+    </div>
+    <script>
+        
+
+        //WatchCalendarに取得したデータを渡す
+        let Watch = () =>{
+            //データ取得
+            let date = new Date();
+            //西暦のデータ
+            let year = date.getFullYear();
+            //月のデータ
+            let month = date.getMonth() + 1; //月が代入される
+            //日にちのデータ
+            let dayNum= date.getDate()
+            //曜日のデータ
+            let day = date.getDay();
+            let daylist = ["日","月","火","水","木","金","土"]
+            let result = daylist[day]
+            //時間のデータ
+            let hour = date.getHours();
+            //分のデータ
+            let minutes = date.getMinutes();
+            //秒のデータ
+            let seconds = date.getSeconds();
+
+
+        //Jsで取得した時刻データをブラウザに出力したい
+        document.getElementById('WatchCalendar').innerHTML =""
+        document.getElementById('WatchTimer').innerHTML =""
+
+        //Jsで取得した時刻データを1秒ごとに変化させたい。処理を繰り返したい
+        setInterval(Watch,1000);        
+
+        };
+
+
+        console.log(new Date);
+
+
+        //Jsで取得した時刻データをHTML要素に変えたい
+
+
+        //Jsで取得した時刻データを２行にしたい
+
+        //Jsで取得した時刻データを任意の順に並び替えたい。
+        // (上)year/month/dayNum/day（下）hour/minutes/seconds
+
+
+        //Jsで取得した時刻データを1秒ごとに変化させたい。処理を繰り返したい
+        setInterval(Watch,1000);
+
+
+
+
+
+    </script>
+</body>
+</html>
