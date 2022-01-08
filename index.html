@@ -7,61 +7,63 @@
 </head>
 <body>
     <div id="container">
-        <div id='Watch'>
-            <p id='WatchCalendar'>000000</p>
-            <p id='WatchTimer'>0000000</p>
+        <div id='watch'>
+            <p id='watchCalendar'></p>
+            <p id='watchTimer'></p>
         </div>
     </div>
     <script>
         
 
         //WatchCalendarに取得したデータを渡す
-        const Watch = () =>{
+        let watch = () =>{
             //データ取得
-            const date = new Date();
+            let date = new Date();
             //西暦のデータ
-            const year = date.getFullYear();
+            let year = date.getFullYear();
             //月のデータ
-            const month = date.getMonth() + 1; //月が代入される
+            let month = date.getMonth() + 1; //月が代入される
             //日にちのデータ
-            const dayNum= date.getDate()
+            let dayNum= date.getDate()
             //曜日のデータ
-            const day = date.getDay();
-            const daylist = ["日","月","火","水","木","金","土"]
-            const result = daylist[day]
+            let day = date.getDay();
+            let daylist = ["Mon","Sun","Thu","Wed","Tue","Fri","Sat"]
+            let result = daylist[day]
             //時間のデータ
-            const hour = date.getHours();
+            let hour = date.getHours();
             //分のデータ
-            const minutes = date.getMinutes();
+            let minutes = date.getMinutes();
             //秒のデータ
-            const seconds = date.getSeconds();
+            let seconds = date.getSeconds();
 
         //常に２行で表示させる処理
-        if (month < 10){month= "0" + month;}
-        if (dayNum <10){dayNum= "0" + dayNum;}
-        if (hour <10){hour= "0" + hour;}
-        if (minutes <10){minutes= "0" + minutes;}
-        if (seconds <10){seconds= "0" + seconds;}
+        if (month < 10){month = "0" + month};
+        if (dayNum <10){dayNum = "0" + dayNum};
+        if (hour <10){hour = "0" + hour};
+        if (minutes <10){minutes = "0" + minutes};
+        if (seconds <10){seconds = "0" + seconds};
 
         //m文字列の並び替え処理
-        const today = year + '/' + month + '/' + dayNum$ + day;
-        const nowtime = hour + ':' + minutes + ':' +seconds;
+        const today = year + ' / ' + month + ' / ' + dayNum + ' / ' + daylist[day];
+        const nowtime = hour + ' : ' + minutes + ' : ' + seconds;
+
 
         //並び替えた文字列をPタグに渡してブラウザに出力したい 
         //→文字列をPタグに代入できていない
-        document.getElementById('WatchCalendar').innerHTML = today;
-        document.getElementById('WatchTimer').innerHTML = nowtime;
+        document.getElementById("watchCalendar").innerHTML = today;
+        document.getElementById("watchTimer").innerHTML = nowtime;
 
-        //Jsで取得した時刻データを1秒ごとに変化させたい。処理を繰り返したい
-        setInterval(Watch,1000);   
 
         };
 
+        //Jsで取得した時刻データを1秒ごとに変化させたい。処理を繰り返したい
+        setInterval(watch,1000); 
+
         console.log(new Date);
-        console.log(WatchCalendar);
-        console.log(WatchTimer);
-        console.log(WatchCalendar.innerHTML);
-        console.log(WatchTimer.innerHTML);
+        console.log(watchCalendar);
+        console.log(watchTimer);
+        console.log(watchCalendar.innerHTML);
+        console.log(watchTimer.innerHTML);
         //あとは取得したデータをHTMLに反映するだけ、、
 
 
